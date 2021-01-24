@@ -933,7 +933,7 @@ func (c *LESetScanEnableRP) Unmarshal(b []byte) error {
 	return unmarshal(c, b)
 }
 
-// LECreateConnection implements LE Create Connection (0x08|0x000D) [Vol 2, Part E, 7.8.12]
+// LECreateConnection implements LE CreateDefault Connection (0x08|0x000D) [Vol 2, Part E, 7.8.12]
 type LECreateConnection struct {
 	LEScanInterval        uint16
 	LEScanWindow          uint16
@@ -950,7 +950,7 @@ type LECreateConnection struct {
 }
 
 func (c *LECreateConnection) String() string {
-	return "LE Create Connection (0x08|0x000D)"
+	return "LE CreateDefault Connection (0x08|0x000D)"
 }
 
 // OpCode returns the opcode of the command.
@@ -964,12 +964,12 @@ func (c *LECreateConnection) Marshal(b []byte) error {
 	return marshal(c, b)
 }
 
-// LECreateConnectionCancel implements LE Create Connection Cancel (0x08|0x000E) [Vol 2, Part E, 7.8.13]
+// LECreateConnectionCancel implements LE CreateDefault Connection Cancel (0x08|0x000E) [Vol 2, Part E, 7.8.13]
 type LECreateConnectionCancel struct {
 }
 
 func (c *LECreateConnectionCancel) String() string {
-	return "LE Create Connection Cancel (0x08|0x000E)"
+	return "LE CreateDefault Connection Cancel (0x08|0x000E)"
 }
 
 // OpCode returns the opcode of the command.
@@ -983,7 +983,7 @@ func (c *LECreateConnectionCancel) Marshal(b []byte) error {
 	return marshal(c, b)
 }
 
-// LECreateConnectionCancelRP returns the return parameter of LE Create Connection Cancel
+// LECreateConnectionCancelRP returns the return parameter of LE CreateDefault Connection Cancel
 type LECreateConnectionCancelRP struct {
 	Status uint8
 }

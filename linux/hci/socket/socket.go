@@ -61,7 +61,7 @@ type Socket struct {
 // If id is -1, the first available HCI device is returned.
 func NewSocket(id int) (*Socket, error) {
 	var err error
-	// Create RAW HCI Socket.
+	// CreateDefault RAW HCI Socket.
 	fd, err := unix.Socket(unix.AF_BLUETOOTH, unix.SOCK_RAW, unix.BTPROTO_HCI)
 	if err != nil {
 		return nil, errors.Wrap(err, "can't create socket")
